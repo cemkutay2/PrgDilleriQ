@@ -25,7 +25,7 @@ int main()
     printf("\n==================================\n\n");
 
     /*   Binary to hexadecimal conversion   */ //   0x...
-    int bNum1 = 0b1010101100; // 684 | (00)10 1010 1100
+    int bNum1 = 0b1010101100; // 684 | (00)10 1010 1100 <- pad the least significant bits with zeros
     int bNum2 = 0x2AC; // 684 |           2    10   12
                        //                 2     A    C
     printf("The numbers are %s.\n\n", bNum1 == bNum2 ? "equal" : "not equal");
