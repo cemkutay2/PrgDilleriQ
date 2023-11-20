@@ -8,8 +8,8 @@ int main()
     /*   Binary addition/subtraction   */ //    0b...
     char num1 = 0b01000001; // 65
     char num2 = 0b00000101; // 5
-    char num3 = 0b11111011; // 251 <=> -5
-    char num4 = 0b11111101; // 253 <=> -3
+    char num3 = 0b11111011; // 251 <=> -5 (-> reverse the bits, add 1)
+    char num4 = 0b11111101; // 253 <=> -3 (-> reverse the bits, add 1)
     int sum1 = num1 + num2; // 01000001 + 00000101 = 01000110 <=> 65 + 5 = 70
     int sum2 = num1 + num3; // 01000001 + 11111011 = (1)00111100 <=> 65 + (-5) = 60 [(1) is discarded]
     int sum3 = num3 + num4; // 11111011 + 11111101 = (1)11111000 <=> (-5) + (-3) = (-8) [(1) is discarded]
