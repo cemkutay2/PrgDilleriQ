@@ -18,7 +18,7 @@ int main()
     printf("\n==================================\n\n");
 
     /*   Binery to octal conversion   */ //     0...
-    char oNum1 = 0b00101011; // 43 | (0)00 101 011 <- pad the least significant bits with zeros
+    char oNum1 = 0b00101011; // 43 | (0)00 101 011 <- pad the bits with zeros
     char oNum2 = 053; // 43 |           0   5   3
     printf("The numbers are %s.\n\n", oNum1 == oNum2 ? "equal" : "not equal");
 
