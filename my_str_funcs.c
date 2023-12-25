@@ -103,15 +103,40 @@ char *my_strrchr(char *str, int chr)
     return 0;
 }
 
-/* char *my_strstr(char *str, char *srch_term)
+char *my_strstr(char *str, char *srch_term)
 {
-    
-} */
+    char *temp;
+    int flag, i = 0;
+    while (*(str + i))
+    {
+        if (*(str + i) == *srch_term)
+        {
+            flag = 0;
+            int j = 0;
+            while (*(srch_term + j) && *(str + i + j))
+            {
+                if (*(srch_term + j) != *(str + i + j))
+                {
+                    flag = 1;
+                    break;
+                }
+                j++;
+            }
+            if (!flag)
+            {
+                temp = (str + i);
+                break;
+            }
+        }
+        i++;
+    }
+    return temp;
+}
 
 int main()
 {
     char str1[100] = "Hello";
     char str2[100] = "World";
-    printf("%s", my_strrchr(str1, 'l'));
+    printf("%s", my_strstr("seko teko eko", "te"));
     return 0;
 }
