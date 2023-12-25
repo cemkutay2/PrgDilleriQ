@@ -19,32 +19,26 @@ int my_strnlen(char *str, int len)
 
 int my_strcmp(char *str1, char *str2)
 {
-    if (my_strlen(str1) != my_strlen(str2))
-        return my_strlen(str1) > my_strlen(str2) ? 1 : -1;
-    else
+    while ((*str1 && *str2) && (*str1 == *str2))
     {
-        for (int i = 0; i < my_strlen(str1); i++)
-        {
-            if (*(str1 + i) != *(str2 + i))
-                return *(str1 + i) > *(str2 + i) ? 1 : -1;
-        }
-        return 0;
+        str1++;
+        str2++;
     }
+    if (*str1 - *str2 == 0) return 0;
+    return *str1 > *str2 ? 1 : -1;
 }
 
 int my_strncmp(char *str1, char *str2, int len)
 {
-    if (my_strnlen(str1, len) != my_strnlen(str2, len))
-        return my_strnlen(str1, len) > my_strnlen(str2, len) ? 1 : -1;
-    else
+    int i = 0;
+    while ((*str1 && *str2) && (*str1 == *str2) && (i < len - 1))
     {
-        for (int i = 0; i < my_strnlen(str1, len); i++)
-        {
-            if (*(str1 + i) != *(str2 + i))
-                return *(str1 + i) > *(str2 + i) ? 1 : -1;
-        }
-        return 0;
+        str1++;
+        str2++;
+        i++;
     }
+    if (*str1 - *str2 == 0) return 0;
+    return *str1 > *str2 ? 1 : -1;
 }
 
 char *my_strcat(char *str1, char *str2)
@@ -137,6 +131,6 @@ int main()
 {
     char str1[100] = "Hello";
     char str2[100] = "World";
-    printf("%s", my_strstr("seko teko eko", "te"));
+    printf("%d", my_strncmp("hellos", "hello", 6));
     return 0;
 }
